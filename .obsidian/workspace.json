@@ -41,12 +41,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "未命名.md",
+                "file": "随笔/晴天.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "未命名"
+              "title": "晴天"
             }
           }
         ],
@@ -123,7 +123,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "未命名.md",
+                "file": "随笔/晴天.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -133,7 +133,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "未命名 的反向链接列表"
+              "title": "晴天 的反向链接列表"
             }
           },
           {
@@ -214,7 +214,9 @@
   },
   "active": "a3c949e93d1bc238",
   "lastOpenFiles": [
-    "README.md",
-    "未命名.md"
+    "未命名.md",
+    "随笔/晴天.md",
+    "随笔",
+    "README.md"
   ]
 }
