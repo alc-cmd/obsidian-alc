@@ -99,3 +99,17 @@ Pages created (1):
 
 Pages updated (1):
 - `wiki/index.md` — added Analyses section
+
+## [2026-04-10] ingest | Dan Koe Write More Essays
+
+Source: Essay/newsletter by Dan Koe (2026-04-02). Why essays are the last bastion of real thinking; the meaning economy, epistemic commons, and AI's inability to write genuine essays.
+
+Pages created (5):
+- `wiki/sources/Dan Koe Write More Essays.md` — source summary
+- `wiki/entities/Dan Koe.md` — writer and content creator
+- `wiki/entities/Daniel Schmachtenberger.md` — systems thinker, metacrisis framework
+- `wiki/concepts/Meaning Economy.md` — meaning as the scarcest commodity
+- `wiki/concepts/Epistemic Commons.md` — the shared public information environment
+
+Pages updated (1):
+- `wiki/index.md` — added new pages
