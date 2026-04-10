@@ -28,3 +28,39 @@ Pages created (10):
 
 Pages updated (1):
 - `wiki/index.md` — added all new pages
+
+## [2026-04-10] ingest | Karpathy LLM Knowledge Bases
+
+Source: Twitter thread by Andrej Karpathy (2026-04-02). Describes his workflow for using LLMs to build personal knowledge bases with Obsidian.
+
+Pages created (3):
+- `wiki/sources/Karpathy LLM Knowledge Bases.md` — source summary
+- `wiki/entities/Andrej Karpathy.md` — AI researcher and educator
+- `wiki/concepts/LLM Wiki.md` — the LLM-maintained knowledge base pattern
+
+Pages updated (1):
+- `wiki/index.md` — added new pages, alphabetized entries
+
+## [2026-04-10] ingest | Top MCP Servers
+
+Source: Twitter thread by @zodchiii (2026-04-08). Curated list of 35 MCP servers for Claude across 9 categories.
+
+Pages created (2):
+- `wiki/sources/Top MCP Servers.md` — source summary with full server catalog
+- `wiki/concepts/MCP.md` — Model Context Protocol concept page
+
+Pages updated (1):
+- `wiki/index.md` — added new pages
+
+## [2026-04-10] ingest | Greg Isenberg Agent Skills
+
+Source: Twitter thread by Greg Isenberg (2026-04-08). How Claude skills and AI agents work — context window management, iterative skill-building, sub-agent patterns.
+
+Pages created (3):
+- `wiki/sources/Greg Isenberg Agent Skills.md` — source summary
+- `wiki/concepts/Context Window Management.md` — controlling LLM context for quality
+- `wiki/concepts/AI Agent Workflows.md` — incremental skill development patterns
+
+Pages updated (2):
+- `wiki/concepts/MCP.md` — added cross-reference to context window management, updated source count
+- `wiki/index.md` — added new pages

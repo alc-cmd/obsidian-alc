@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "raw/Clippings/AI 2027.md",
+                "file": "raw/Clippings/Thread by @gregisenberg.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "AI 2027"
+              "title": "Thread by @gregisenberg"
             }
           }
         ]
@@ -61,7 +61,7 @@
                 "sortOrder": "alphabetical"
               },
               "icon": "lucide-search",
-              "title": "搜索"
+              "title": "Search"
             }
           },
           {
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "raw/Clippings/AI 2027.md",
+                "file": "raw/Clippings/Thread by @gregisenberg.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +104,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for AI 2027"
+              "title": "Backlinks for Thread by @gregisenberg"
             }
           },
           {
@@ -183,33 +183,44 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "e543ad79f21a5ffc",
+  "active": "a3c949e93d1bc238",
   "lastOpenFiles": [
+    "wiki/concepts/AI Agent Workflows.md",
+    "wiki/concepts/Context Window Management.md",
+    "wiki/sources/Greg Isenberg Agent Skills.md",
+    "raw/Clippings/Thread by @gregisenberg.md",
+    "raw/Clippings/Top MCP Servers That Turn Claude Into a Productivity Machine.md",
+    "wiki/concepts/MCP.md",
+    "wiki/sources/Top MCP Servers.md",
+    "wiki/sources/Karpathy LLM Knowledge Bases.md",
+    "raw/assets/CLAUDE.md",
+    "2026-04-10.md",
+    "wiki/concepts/LLM Wiki.md",
+    "raw/assets/README.md",
+    "raw/Clippings/Thread by @karpathy.md",
+    "wiki/entities/Andrej Karpathy.md",
+    "raw/Clippings/AI 2027.md",
+    "Clippings",
+    "raw/Clippings/Clippings",
+    "wiki/entities/Daniel Kokotajlo.md",
+    "wiki/concepts/Intelligence Explosion.md",
+    "Untitled.canvas",
+    "wiki/entities/OpenBrain.md",
     "wiki/concepts/AI Arms Race.md",
     "wiki/concepts/AI Alignment.md",
     "wiki/concepts/Iterated Distillation and Amplification.md",
     "wiki/concepts/Neuralese Recurrence.md",
-    "wiki/concepts/Intelligence Explosion.md",
     "wiki/entities/DeepCent.md",
-    "wiki/entities/OpenBrain.md",
     "wiki/entities/Eli Lifland.md",
-    "wiki/entities/Daniel Kokotajlo.md",
     "wiki/sources/AI 2027.md",
-    "raw/Clippings/AI 2027.md",
     "raw/Clippings",
     "wiki/index.md",
-    "wiki/log.md",
-    "CLAUDE.md",
-    "README.md",
     "wiki/sources",
     "wiki/entities",
     "wiki/concepts",
     "wiki/analyses",
     "wiki",
     "raw/assets",
-    "raw",
-    "未命名.md",
-    "随笔/晴天.md",
-    "随笔"
+    "raw"
   ]
 }
