@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "before-after-map",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": ["serve", "/Users/qianshuwang/obsidian-alex/raw/assets", "-l", "3847"],
+      "port": 3847
+    }
+  ]
+}

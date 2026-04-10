@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Before & After: Prompt vs Memory Engineering</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #08080a;
+    --surface: #111114;
+    --surface-2: #18181c;
+    --border: #252529;
+    --dim: #4a4a55;
+    --muted: #6b6b7b;
+    --text: #e8e8ed;
+    --accent-red: #ff4444;
+    --accent-red-dim: #ff444422;
+    --accent-green: #44ffaa;
+    --accent-green-dim: #44ffaa18;
+    --accent-green-glow: #44ffaa08;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Space Mono', monospace;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* Grain overlay */
+  body::after {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 100;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 40px;
+  }
+
+  /* Header */
+  .header {
+    text-align: center;
+    margin-bottom: 80px;
+    position: relative;
+  }
+
+  .header::before {
+    content: '';
+    position: absolute;
+    top: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 1px;
+    height: 30px;
+    background: var(--dim);
+  }
+
+  .label {
+    font-size: 10px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 24px;
+  }
+
+  h1 {
+    font-family: 'Instrument Serif', serif;
+    font-size: clamp(36px, 5vw, 56px);
+    font-weight: 400;
+    line-height: 1.15;
+    margin-bottom: 20px;
+  }
+
+  h1 .strike {
+    text-decoration: line-through;
+    color: var(--accent-red);
+    text-decoration-thickness: 2px;
+    opacity: 0.7;
+  }
+
+  h1 .highlight {
+    color: var(--accent-green);
+    font-style: italic;
+  }
+
+  .subtitle {
+    font-size: 13px;
+    color: var(--muted);
+    max-width: 500px;
+    margin: 0 auto;
+    line-height: 1.7;
+  }
+
+  /* Comparison grid */
+  .comparison {
+    display: grid;
+    grid-template-columns: 1fr 60px 1fr;
+    gap: 0;
+    margin-bottom: 80px;
+    position: relative;
+  }
+
+  .divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+
+  .divider::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 1px;
+    background: linear-gradient(to bottom, transparent, var(--border) 10%, var(--border) 90%, transparent);
+  }
+
+  .divider-dot {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    color: var(--muted);
+    z-index: 1;
+    letter-spacing: 1px;
+  }
+
+  /* Side panels */
+  .side {
+    padding: 40px;
+  }
+
+  .side-label {
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 32px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .side-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+  }
+
+  .before .side-label {
+    color: var(--accent-red);
+  }
+  .before .side-label::after {
+    background: linear-gradient(to right, var(--accent-red-dim), transparent);
+  }
+
+  .after .side-label {
+    color: var(--accent-green);
+  }
+  .after .side-label::after {
+    background: linear-gradient(to right, var(--accent-green-dim), transparent);
+  }
+
+  /* Prompt box */
+  .prompt-box {
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 32px;
+    position: relative;
+    font-size: 12px;
+    line-height: 1.7;
+    color: var(--muted);
+    background: var(--surface);
+  }
+
+  .before .prompt-box {
+    border-color: #ff444433;
+    background: linear-gradient(135deg, var(--surface), #ff440506);
+  }
+
+  .after .prompt-box {
+    border-color: #44ffaa33;
+    background: linear-gradient(135deg, var(--surface), #44ffaa06);
+  }
+
+  .prompt-box .prompt-label {
+    position: absolute;
+    top: -8px;
+    left: 16px;
+    background: var(--bg);
+    padding: 0 8px;
+    font-size: 9px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+
+  .before .prompt-label { color: var(--accent-red); }
+  .after .prompt-label { color: var(--accent-green); }
+
+  .prompt-box em {
+    font-style: italic;
+    color: var(--text);
+    opacity: 0.8;
+  }
+
+  /* Key points */
+  .points {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .point {
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+  }
+
+  .point-marker {
+    flex-shrink: 0;
+    width: 20px;
+    height: 20px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    margin-top: 2px;
+  }
+
+  .before .point-marker {
+    background: var(--accent-red-dim);
+    color: var(--accent-red);
+    border: 1px solid #ff444433;
+  }
+
+  .after .point-marker {
+    background: var(--accent-green-dim);
+    color: var(--accent-green);
+    border: 1px solid #44ffaa33;
+  }
+
+  .point-content {
+    flex: 1;
+  }
+
+  .point-title {
+    font-size: 12px;
+    font-weight: 700;
+    margin-bottom: 4px;
+    letter-spacing: 0.5px;
+  }
+
+  .before .point-title { color: #ff8888; }
+  .after .point-title { color: #88ffcc; }
+
+  .point-desc {
+    font-size: 11px;
+    color: var(--dim);
+    line-height: 1.6;
+  }
+
+  /* Bottom insight */
+  .insight {
+    border-top: 1px solid var(--border);
+    padding-top: 48px;
+    text-align: center;
+  }
+
+  .insight-text {
+    font-family: 'Instrument Serif', serif;
+    font-size: clamp(20px, 3vw, 28px);
+    font-style: italic;
+    line-height: 1.5;
+    color: var(--text);
+    max-width: 700px;
+    margin: 0 auto 20px;
+  }
+
+  .insight-text .key {
+    color: var(--accent-green);
+    font-style: normal;
+  }
+
+  .insight-sub {
+    font-size: 11px;
+    color: var(--dim);
+    letter-spacing: 1px;
+  }
+
+  /* Flow diagram */
+  .flow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin: 40px 0;
+    flex-wrap: wrap;
+  }
+
+  .flow-node {
+    padding: 8px 14px;
+    border-radius: 6px;
+    font-size: 10px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    border: 1px solid;
+  }
+
+  .before .flow-node {
+    border-color: #ff444433;
+    color: #ff8888;
+    background: #ff440508;
+  }
+
+  .after .flow-node {
+    border-color: #44ffaa33;
+    color: #88ffcc;
+    background: #44ffaa08;
+  }
+
+  .after .flow-node.active {
+    border-color: #44ffaa66;
+    color: var(--accent-green);
+    background: #44ffaa15;
+    box-shadow: 0 0 20px #44ffaa08;
+  }
+
+  .flow-arrow {
+    color: var(--dim);
+    font-size: 14px;
+  }
+
+  /* Animations */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .header { animation: fadeUp 0.8s ease both; }
+  .before { animation: fadeUp 0.8s ease 0.2s both; }
+  .divider { animation: fadeUp 0.8s ease 0.3s both; }
+  .after { animation: fadeUp 0.8s ease 0.4s both; }
+  .insight { animation: fadeUp 0.8s ease 0.6s both; }
+
+  .point:nth-child(1) { animation: fadeUp 0.5s ease 0.5s both; }
+  .point:nth-child(2) { animation: fadeUp 0.5s ease 0.6s both; }
+  .point:nth-child(3) { animation: fadeUp 0.5s ease 0.7s both; }
+  .point:nth-child(4) { animation: fadeUp 0.5s ease 0.8s both; }
+  .point:nth-child(5) { animation: fadeUp 0.5s ease 0.9s both; }
+
+  @media (max-width: 768px) {
+    .comparison {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+    .divider {
+      height: 60px;
+    }
+    .divider::before {
+      top: 50%;
+      bottom: auto;
+      left: 0;
+      right: 0;
+      width: auto;
+      height: 1px;
+      background: linear-gradient(to right, transparent, var(--border), transparent);
+    }
+    .side { padding: 20px; }
+    .container { padding: 40px 20px; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <div class="header">
+    <p class="label">The shift</p>
+    <h1><span class="strike">Prompt Engineering</span><br><span class="highlight">Memory Engineering</span></h1>
+    <p class="subtitle">The same model. The same intelligence. Completely different results. Not because you asked better — because your context changed what was possible to ask.</p>
+  </div>
+
+  <div class="comparison">
+
+    <div class="side before">
+      <p class="side-label">Before — Prompt Engineering</p>
+
+      <div class="prompt-box">
+        <span class="prompt-label">The prompt</span>
+        <em>"I've been reading about AI development timelines and agent workflows. What are the most important trends in AI right now and how should I think about using AI tools effectively?"</em>
+      </div>
+
+      <div class="flow">
+        <span class="flow-node">You</span>
+        <span class="flow-arrow">→</span>
+        <span class="flow-node">Prompt</span>
+        <span class="flow-arrow">→</span>
+        <span class="flow-node">LLM</span>
+        <span class="flow-arrow">→</span>
+        <span class="flow-node">Generic answer</span>
+      </div>
+
+      <ul class="points">
+        <li class="point">
+          <span class="point-marker">×</span>
+          <div class="point-content">
+            <div class="point-title">Starts from zero</div>
+            <div class="point-desc">Every conversation begins with no context. The model knows nothing about what you've read, built, or care about.</div>
+          </div>
+        </li>
+        <li class="point">
+          <span class="point-marker">×</span>
+          <div class="point-content">
+            <div class="point-title">Generic output</div>
+            <div class="point-desc">You get a well-written but surface-level answer that could have been written for anyone.</div>
+          </div>
+        </li>
+        <li class="point">
+          <span class="point-marker">×</span>
+          <div class="point-content">
+            <div class="point-title">Nothing compounds</div>
+            <div class="point-desc">Close the chat, lose the context. Your next session starts from scratch again.</div>
+          </div>
+        </li>
+        <li class="point">
+          <span class="point-marker">×</span>
+          <div class="point-content">
+            <div class="point-title">Prompt-dependent</div>
+            <div class="point-desc">Output quality depends entirely on how well you can stuff context into a single message.</div>
+          </div>
+        </li>
+        <li class="point">
+          <span class="point-marker">×</span>
+          <div class="point-content">
+            <div class="point-title">No connections</div>
+            <div class="point-desc">Can't synthesize across your sources. Doesn't know that article A contradicts article B.</div>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <div class="divider">
+      <div class="divider-dot">vs</div>
+    </div>
+
+    <div class="side after">
+      <p class="side-label">After — Memory Engineering</p>
+
+      <div class="prompt-box">
+        <span class="prompt-label">The prompt</span>
+        <em>"What's the relationship between the AI intelligence explosion thesis and Karpathy's observation about peaky AI capabilities? How does this inform my AI workflow?"</em>
+      </div>
+
+      <div class="flow">
+        <span class="flow-node">You</span>
+        <span class="flow-arrow">→</span>
+        <span class="flow-node active">Wiki</span>
+        <span class="flow-arrow">→</span>
+        <span class="flow-node">LLM + Context</span>
+        <span class="flow-arrow">→</span>
+        <span class="flow-node active">Insight</span>
+      </div>
+
+      <ul class="points">
+        <li class="point">
+          <span class="point-marker">✓</span>
+          <div class="point-content">
+            <div class="point-title">Persistent context</div>
+            <div class="point-desc">28 wiki pages of indexed knowledge. The model reads your index, finds relevant pages, draws on everything you've accumulated.</div>
+          </div>
+        </li>
+        <li class="point">
+          <span class="point-marker">✓</span>
+          <div class="point-content">
+            <div class="point-title">Cross-source synthesis</div>
+            <div class="point-desc">Connects AI 2027's intelligence explosion to Karpathy's capability gap to your own workflow — references already in place.</div>
+          </div>
+        </li>
+        <li class="point">
+          <span class="point-marker">✓</span>
+          <div class="point-content">
+            <div class="point-title">Knowledge compounds</div>
+            <div class="point-desc">Every source ingested, every query filed back — the wiki gets richer. Source #7 connects to sources #1, #3, and #5 automatically.</div>
+          </div>
+        </li>
+        <li class="point">
+          <span class="point-marker">✓</span>
+          <div class="point-content">
+            <div class="point-title">Architecture-dependent</div>
+            <div class="point-desc">Output quality depends on your knowledge architecture, not your prompting skill. Build once, benefit forever.</div>
+          </div>
+        </li>
+        <li class="point">
+          <span class="point-marker">✓</span>
+          <div class="point-content">
+            <div class="point-title">New questions emerge</div>
+            <div class="point-desc">The wiki surface area grows, revealing questions you couldn't have asked before. The context changes what's possible to think.</div>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+  </div>
+
+  <div class="insight">
+    <p class="insight-text">The model didn't get smarter.<br>The <span class="key">context</span> changed what was possible to ask.</p>
+    <p class="insight-sub">from prompt engineering to memory engineering</p>
+  </div>
+
+</div>
+</body>
+</html>
