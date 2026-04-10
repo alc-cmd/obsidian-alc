@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "README.md",
+                "file": "wiki/index.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "README"
+              "title": "index"
             }
           }
         ]
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "README.md",
+                "file": "wiki/index.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +104,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for README"
+              "title": "Backlinks for index"
             }
           },
           {
@@ -185,6 +185,10 @@
   },
   "active": "a3c949e93d1bc238",
   "lastOpenFiles": [
+    "wiki/log.md",
+    "CLAUDE.md",
+    "README.md",
+    "wiki/index.md",
     "wiki/sources",
     "wiki/entities",
     "wiki/concepts",
@@ -194,7 +198,6 @@
     "raw",
     "未命名.md",
     "随笔/晴天.md",
-    "README.md",
     "随笔"
   ]
 }
