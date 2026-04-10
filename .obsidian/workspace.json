@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Clippings/AI 2027.md",
+                "file": "raw/Clippings/AI 2027.md",
                 "mode": "source",
                 "source": false
               },
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Clippings/AI 2027.md",
+                "file": "raw/Clippings/AI 2027.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -183,10 +183,20 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "a3c949e93d1bc238",
+  "active": "e543ad79f21a5ffc",
   "lastOpenFiles": [
-    "Clippings/AI 2027.md",
-    "Clippings",
+    "wiki/concepts/AI Arms Race.md",
+    "wiki/concepts/AI Alignment.md",
+    "wiki/concepts/Iterated Distillation and Amplification.md",
+    "wiki/concepts/Neuralese Recurrence.md",
+    "wiki/concepts/Intelligence Explosion.md",
+    "wiki/entities/DeepCent.md",
+    "wiki/entities/OpenBrain.md",
+    "wiki/entities/Eli Lifland.md",
+    "wiki/entities/Daniel Kokotajlo.md",
+    "wiki/sources/AI 2027.md",
+    "raw/Clippings/AI 2027.md",
+    "raw/Clippings",
     "wiki/index.md",
     "wiki/log.md",
     "CLAUDE.md",
