@@ -64,3 +64,28 @@ Pages created (3):
 Pages updated (2):
 - `wiki/concepts/MCP.md` — added cross-reference to context window management, updated source count
 - `wiki/index.md` — added new pages
+
+## [2026-04-10] ingest | Miles Deutscher AI Second Brain
+
+Source: Video transcript by Miles Deutscher (2026-04-09). Step-by-step tutorial building an AI second brain with Obsidian + Claude Code, inspired by Karpathy's framework. Pasted directly in chat (not from raw/).
+
+Pages created (2):
+- `wiki/sources/Miles Deutscher AI Second Brain.md` — source summary
+- `wiki/entities/Miles Deutscher.md` — content creator and AI workflow popularizer
+
+Pages updated (3):
+- `wiki/concepts/LLM Wiki.md` — added second source, updated source count and related links
+- `wiki/entities/Andrej Karpathy.md` — added appearance in Deutscher's video, updated source count
+- `wiki/index.md` — added new pages
+
+## [2026-04-10] ingest | Karpathy AI Capability Gap
+
+Source: Twitter thread by Andrej Karpathy (2026-04-09). The growing perception split between casual and professional AI users; why AI progress is "peaky" in technical domains.
+
+Pages created (2):
+- `wiki/sources/Karpathy AI Capability Gap.md` — source summary
+- `wiki/concepts/AI Capability Distribution.md` — uneven AI progress across domains
+
+Pages updated (2):
+- `wiki/entities/Andrej Karpathy.md` — added third source, updated source count
+- `wiki/index.md` — added new pages

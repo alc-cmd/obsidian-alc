@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "raw/Clippings/Thread by @gregisenberg.md",
+                "file": "wiki/entities/Miles Deutscher.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Thread by @gregisenberg"
+              "title": "Miles Deutscher"
             }
           }
         ]
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "raw/Clippings/Thread by @gregisenberg.md",
+                "file": "wiki/entities/Miles Deutscher.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +104,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for Thread by @gregisenberg"
+              "title": "Backlinks for Miles Deutscher"
             }
           },
           {
@@ -185,17 +185,27 @@
   },
   "active": "a3c949e93d1bc238",
   "lastOpenFiles": [
-    "wiki/concepts/AI Agent Workflows.md",
-    "wiki/concepts/Context Window Management.md",
-    "wiki/sources/Greg Isenberg Agent Skills.md",
+    "wiki/concepts/AI Arms Race.md",
+    "wiki/concepts/AI Capability Distribution.md",
+    "wiki/concepts/Neuralese Recurrence.md",
     "raw/Clippings/Thread by @gregisenberg.md",
     "raw/Clippings/Top MCP Servers That Turn Claude Into a Productivity Machine.md",
+    "wiki/sources/Karpathy AI Capability Gap.md",
     "wiki/concepts/MCP.md",
+    "wiki/concepts/LLM Wiki.md",
+    "wiki/concepts/Iterated Distillation and Amplification.md",
+    "wiki/concepts/Intelligence Explosion.md",
+    "wiki/concepts/AI Alignment.md",
+    "wiki/concepts/AI Agent Workflows.md",
+    "raw/Clippings/Thread by @karpathy 1.md",
+    "wiki/entities/Miles Deutscher.md",
+    "wiki/sources/Miles Deutscher AI Second Brain.md",
+    "wiki/concepts/Context Window Management.md",
+    "wiki/sources/Greg Isenberg Agent Skills.md",
     "wiki/sources/Top MCP Servers.md",
     "wiki/sources/Karpathy LLM Knowledge Bases.md",
     "raw/assets/CLAUDE.md",
     "2026-04-10.md",
-    "wiki/concepts/LLM Wiki.md",
     "raw/assets/README.md",
     "raw/Clippings/Thread by @karpathy.md",
     "wiki/entities/Andrej Karpathy.md",
@@ -203,18 +213,8 @@
     "Clippings",
     "raw/Clippings/Clippings",
     "wiki/entities/Daniel Kokotajlo.md",
-    "wiki/concepts/Intelligence Explosion.md",
     "Untitled.canvas",
-    "wiki/entities/OpenBrain.md",
-    "wiki/concepts/AI Arms Race.md",
-    "wiki/concepts/AI Alignment.md",
-    "wiki/concepts/Iterated Distillation and Amplification.md",
-    "wiki/concepts/Neuralese Recurrence.md",
-    "wiki/entities/DeepCent.md",
-    "wiki/entities/Eli Lifland.md",
-    "wiki/sources/AI 2027.md",
     "raw/Clippings",
-    "wiki/index.md",
     "wiki/sources",
     "wiki/entities",
     "wiki/concepts",

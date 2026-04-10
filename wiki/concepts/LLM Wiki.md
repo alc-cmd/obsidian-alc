@@ -1,7 +1,7 @@
 ---
 aliases: [LLM knowledge base, LLM-maintained wiki, AI wiki]
 first_mentioned: 2026-04-10
-source_count: 1
+source_count: 2
 tags: [LLM, knowledge-management, Obsidian, workflow, methodology]
 ---
 
@@ -19,6 +19,7 @@ A pattern for building personal knowledge bases where an LLM writes and maintain
 
 ## Sources
 - [[Karpathy LLM Knowledge Bases]] — [[Andrej Karpathy]]'s practitioner description of the pattern, validating the approach at scale
+- [[Miles Deutscher AI Second Brain]] — Step-by-step tutorial implementing the pattern with Obsidian + Claude Code; adds practical upgrades (hot cache, weekly health checks, agent integration)
 
 ## Open Questions
 - At what scale does index-based navigation break down and require proper search (embedding-based or hybrid)?
@@ -26,4 +27,4 @@ A pattern for building personal knowledge bases where an LLM writes and maintain
 - How to handle contradictions between sources with differing authority levels?
 
 ## Related
-- [[Andrej Karpathy]]
+- [[Andrej Karpathy]], [[Miles Deutscher]], [[Context Window Management]]

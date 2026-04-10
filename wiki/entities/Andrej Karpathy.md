@@ -2,7 +2,7 @@
 entity_type: person
 aliases: [karpathy, @karpathy]
 first_mentioned: 2026-04-10
-source_count: 1
+source_count: 3
 tags: [AI, LLM, deep-learning, knowledge-management]
 ---
 
@@ -18,6 +18,8 @@ AI researcher, educator, and practitioner. Former director of AI at Tesla, forme
 
 ## Appearances in Sources
 - [[Karpathy LLM Knowledge Bases]] — Author of the Twitter thread describing the LLM wiki workflow
+- [[Miles Deutscher AI Second Brain]] — Referenced as the inspiration; his post got 16M+ views on X and his gist serves as the "idea file" for building LLM wikis
+- [[Karpathy AI Capability Gap]] — Author; analysis of the growing perception split between casual and professional AI users
 
 ## Related
-- [[LLM Wiki]]
+- [[LLM Wiki]], [[AI Capability Distribution]]
