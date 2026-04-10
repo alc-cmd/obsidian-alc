@@ -8,49 +8,16 @@
         "type": "tabs",
         "children": [
           {
-            "id": "81708f6a6db260a1",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "README.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "README"
-            }
-          },
-          {
-            "id": "f86054cfc6c20ea7",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "README.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "README"
-            }
-          },
-          {
             "id": "a3c949e93d1bc238",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "随笔/晴天.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "晴天"
+              "type": "graph",
+              "state": {},
+              "icon": "lucide-git-fork",
+              "title": "关系图谱"
             }
           }
-        ],
-        "currentTab": 2
+        ]
       }
     ],
     "direction": "vertical"
@@ -123,7 +90,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "随笔/晴天.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -133,7 +99,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "晴天 的反向链接列表"
+              "title": "反向链接"
             }
           },
           {
@@ -214,9 +180,9 @@
   },
   "active": "a3c949e93d1bc238",
   "lastOpenFiles": [
-    "未命名.md",
     "随笔/晴天.md",
-    "随笔",
-    "README.md"
+    "未命名.md",
+    "README.md",
+    "随笔"
   ]
 }
