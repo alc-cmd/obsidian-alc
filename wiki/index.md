@@ -33,3 +33,6 @@ Master catalog of all wiki pages. Updated on every ingest.
 - [[MCP]] — Model Context Protocol — standard for connecting Claude to external tools and services
 - [[AI Capability Distribution]] — Why AI progress is uneven across domains; verifiable rewards drive coding gains faster than writing/reasoning
 - [[Neuralese Recurrence]] — High-bandwidth internal reasoning using vector representations instead of text tokens
+
+## Analyses
+- [[From Prompt Engineering to Memory Engineering]] — Article draft: the shift from crafting prompts to building persistent knowledge architecture. Synthesizes Karpathy, Isenberg, Deutscher, and AI 2027

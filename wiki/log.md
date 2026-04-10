@@ -89,3 +89,13 @@ Pages created (2):
 Pages updated (2):
 - `wiki/entities/Andrej Karpathy.md` — added third source, updated source count
 - `wiki/index.md` — added new pages
+
+## [2026-04-10] query | From Prompt Engineering to Memory Engineering
+
+Article draft filed in `wiki/analyses/`. Synthesizes 5 sources (Karpathy x2, Isenberg, Deutscher, AI 2027) into a thesis: the shift from crafting prompts to building persistent knowledge architecture. Includes before/after comparison, architecture overview, and compounding effect analysis.
+
+Pages created (1):
+- `wiki/analyses/From Prompt Engineering to Memory Engineering.md`
+
+Pages updated (1):
+- `wiki/index.md` — added Analyses section
