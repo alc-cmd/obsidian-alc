@@ -11,10 +11,14 @@
             "id": "a3c949e93d1bc238",
             "type": "leaf",
             "state": {
-              "type": "graph",
-              "state": {},
-              "icon": "lucide-git-fork",
-              "title": "Graph view"
+              "type": "markdown",
+              "state": {
+                "file": "raw/Clippings/Hermes Agent新手教程：从入门到精通，附带变现方式.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Hermes Agent新手教程：从入门到精通，附带变现方式"
             }
           }
         ]
@@ -90,6 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "raw/Clippings/Hermes Agent新手教程：从入门到精通，附带变现方式.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -99,7 +104,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks"
+              "title": "Backlinks for Hermes Agent新手教程：从入门到精通，附带变现方式"
             }
           },
           {
@@ -178,8 +183,10 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "e543ad79f21a5ffc",
+  "active": "a3c949e93d1bc238",
   "lastOpenFiles": [
+    "raw/Clippings/Thread by @karpathy 1.md",
+    "raw/Clippings/从3000美元做到40000美元，14天归零。我靠AI赚回来了，而且比之前更多、更稳定.md",
     "2026-04-15.md",
     "Untitled.canvas",
     "raw/Clippings/Claude Schedules vs Routines (What's the difference).md",
@@ -206,7 +213,6 @@
     "wiki/sources/Dan Koe Write More Essays.md",
     "wiki/concepts/AI Alignment.md",
     "raw/Clippings/AI 2027.md",
-    "raw/Clippings/Thread by @karpathy 1.md",
     "raw/Clippings/Thread by @karpathy.md",
     "raw/assets/prompt-to-memory-engineering.png",
     "Clippings",
