@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "wiki/concepts/Meaning Economy.md",
+                "file": "raw/Clippings/How to Connect Claude to TradingView (FULL GUIDE).md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Meaning Economy"
+              "title": "How to Connect Claude to TradingView (FULL GUIDE)"
             }
           }
         ]
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "wiki/concepts/Meaning Economy.md",
+                "file": "raw/Clippings/How to Connect Claude to TradingView (FULL GUIDE).md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +104,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for Meaning Economy"
+              "title": "Backlinks for How to Connect Claude to TradingView (FULL GUIDE)"
             }
           },
           {
@@ -185,6 +185,9 @@
   },
   "active": "a3c949e93d1bc238",
   "lastOpenFiles": [
+    "wiki/concepts/Meaning Economy.md",
+    "raw/Clippings/How to Connect Claude to TradingView (FULL GUIDE).md",
+    "AI-Industry-April-2026.docx",
     "wiki/concepts/Trading Psychology.md",
     "wiki/concepts/Hermes Agent.md",
     "wiki/entities/0xBarrry.md",
@@ -211,9 +214,7 @@
     "wiki/log.md",
     "raw/Clippings/I'm begging you to write more essays.md",
     "wiki/concepts/Epistemic Commons.md",
-    "wiki/concepts/Meaning Economy.md",
     "wiki/entities/Daniel Schmachtenberger.md",
-    "wiki/entities/Dan Koe.md",
     "raw/assets/prompt-to-memory-engineering.png",
     "Clippings",
     "raw/Clippings/Clippings",
@@ -221,7 +222,6 @@
     "wiki/sources",
     "wiki/entities",
     "wiki/concepts",
-    "wiki/analyses",
-    "wiki"
+    "wiki/analyses"
   ]
 }
