@@ -1,7 +1,7 @@
 ---
 aliases: [Model Context Protocol, MCP server, MCP servers]
 first_mentioned: 2026-04-10
-source_count: 2
+source_count: 3
 tags: [AI, tools, Claude, protocol, integrations]
 ---
 
@@ -20,11 +20,13 @@ Model Context Protocol — the standard for connecting Claude (and other LLMs) t
 ## Sources
 - [[Top MCP Servers]] — Curated list of 35 production-quality MCP servers across 9 categories
 - [[Greg Isenberg Agent Skills]] — Notes that MCP servers consume context tokens, reinforcing the 3-5 server recommendation
+- [[Hermes Agent Intermediate to Advanced]] — Hermes 的 MCP 深度集成：Stdio/HTTP 双模式、OAuth 2.1 安全、权限白名单过滤、MCP Sampling 反向调用、动态工具发现
 
 ## Open Questions
 - How does MCP server quality scale as the ecosystem matures? Will curation become a bottleneck?
 - What's the optimal architecture for combining multiple MCP servers without exceeding context limits?
 - How do MCP servers compare to native integrations (e.g., built-in web search vs. Tavily MCP)?
+- Hermes 的 MCP Sampling（服务器反向请求 LLM 推理）模式是否会成为标准？安全影响如何？
 
 ## Related
-- [[Context Window Management]], [[AI Agent Workflows]], [[LLM Wiki]]
+- [[Context Window Management]], [[AI Agent Workflows]], [[LLM Wiki]], [[Hermes Agent]]

@@ -1,7 +1,7 @@
 ---
 aliases: [agent workflows, AI agents, sub-agents, agentic workflows]
 first_mentioned: 2026-04-10
-source_count: 1
+source_count: 4
 tags: [AI, agents, workflow, productivity, skills]
 ---
 
@@ -19,11 +19,15 @@ Patterns for building reliable AI agent systems through incremental skill develo
 
 ## Sources
 - [[Greg Isenberg Agent Skills]] — The incremental skill-building methodology, with the example of Ross Mike building 5 sub-agents over months
+- [[Hermes Agent Beginner to Master]] — Hermes 的 Skill 自动创建与进化机制，从手动到自改进的范式转变
+- [[Hermes Agent Intermediate to Advanced]] — 多 Agent 编排（最多3子Agent并行）、delegate_task 机制、学习循环内部流程
+- [[Barry AI Trading System]] — 30+ AI 工具从零搭建的实战案例，"建造者 vs 消费者"论点
 
 ## Open Questions
 - How do you decide when a workflow has "earned" its own sub-agent?
-- Is there a ceiling on the number of reliable sub-agents one person can maintain?
-- How do agent skills interact with [[MCP]] servers — are they complementary or overlapping?
+- Is there a ceiling on the number of reliable sub-agents one person can maintain? (Hermes 建议上限 3 个)
+- How do agent skills interact with [[MCP]] servers — are they complementary or overlapping? (Hermes 的回答：互补，Skill 定义做什么，MCP 定义用什么工具)
+- 自改进 Skill 系统（Hermes）vs 手动维护 Skill（Claude Code）——哪种模式更可靠？
 
 ## Related
-- [[Context Window Management]], [[MCP]], [[LLM Wiki]]
+- [[Context Window Management]], [[MCP]], [[LLM Wiki]], [[Hermes Agent]], [[Trading Psychology]]
