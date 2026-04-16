@@ -113,3 +113,62 @@ Pages created (5):
 
 Pages updated (1):
 - `wiki/index.md` — added new pages
+
+## [2026-04-15] ingest | Barry AI Trading System
+
+Source: Twitter thread by @0xBarrry (2026-04-14). Crypto trader's journey from $3K to $40K to zero, then rebuilding with 30+ custom AI tools to achieve 80% win rate on perpetual contracts. Core thesis: AI's real value is enforcing emotional discipline, not just automation.
+
+Pages created (4):
+- `wiki/sources/Barry AI Trading System.md` — source summary
+- `wiki/entities/0xBarrry.md` — crypto trader and AI systems builder
+- `wiki/concepts/Trading Psychology.md` — emotional state management as data signal
+- `wiki/concepts/Hermes Agent.md` — cross-referenced concept (initially stub)
+
+Pages updated (1):
+- `wiki/index.md` — added new pages
+
+## [2026-04-15] ingest | Hermes Agent Beginner to Master
+
+Source: Comprehensive guide by @jiroucaigou (2026-04-15). Hermes Agent tutorial from installation to advanced usage: self-improving learning loop, three-layer memory, Skill auto-creation, multi-platform gateway, monetization paths.
+
+Pages created (3):
+- `wiki/sources/Hermes Agent Beginner to Master.md` — source summary
+- `wiki/entities/Nous Research.md` — open-source AI lab, crypto-funded
+- `wiki/concepts/Hermes Agent.md` — concept page (updated with full detail)
+
+Pages updated (1):
+- `wiki/index.md` — added new pages
+
+## [2026-04-15] ingest | Hermes Agent Intermediate to Advanced
+
+Source: Advanced guide by @BTCqzy1 (2026-04-15). Deep dive into Hermes architecture: four-layer memory system, Skill self-evolution, MCP deep integration (Stdio/HTTP/OAuth/Sampling), multi-Agent orchestration, production deployment, competitive comparison.
+
+Pages created (1):
+- `wiki/sources/Hermes Agent Intermediate to Advanced.md` — source summary
+
+Pages updated (3):
+- `wiki/concepts/Hermes Agent.md` — added architecture details, competitive comparison
+- `wiki/concepts/MCP.md` — added Hermes MCP integration reference
+- `wiki/index.md` — added new pages
+
+## [2026-04-15] ingest | Claude Schedules vs Routines
+
+Source: Twitter thread by @NickSpisak_ (2026-04-15). Clear breakdown of Claude Code's three automation options: Routines (cloud), Desktop Schedules (local), /loop (session). Includes decision matrix and setup instructions.
+
+Pages created (1):
+- `wiki/sources/Claude Schedules vs Routines.md` — source summary
+
+Pages updated (1):
+- `wiki/index.md` — added new pages
+
+## [2026-04-16] ingest | Miles Deutscher TradingView MCP
+
+Source: Twitter thread by @milesdeutscher (2026-04-01, clipped 2026-04-16). Full guide connecting Claude Code to TradingView Desktop via community MCP server by @Tradesdontlie. Enables real-time chart data reading, indicator management, TA automation, and alert management.
+
+Pages created (1):
+- `wiki/sources/Miles Deutscher TradingView MCP.md` — source summary
+
+Pages updated (3):
+- `wiki/entities/Miles Deutscher.md` — added second source, updated source count
+- `wiki/concepts/MCP.md` — added TradingView MCP reference, updated source count
+- `wiki/index.md` — added new pages, alphabetized all sections

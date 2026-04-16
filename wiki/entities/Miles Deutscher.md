@@ -2,7 +2,7 @@
 entity_type: person
 aliases: []
 first_mentioned: 2026-04-10
-source_count: 1
+source_count: 2
 tags: [content-creator, AI, crypto, Obsidian, Claude-Code]
 ---
 
@@ -19,6 +19,7 @@ Content creator and entrepreneur focused on AI tools, crypto, and business strat
 
 ## Appearances in Sources
 - [[Miles Deutscher AI Second Brain]] — Author of the video tutorial on building an AI second brain with Obsidian + Claude Code
+- [[Miles Deutscher TradingView MCP]] — Full guide on connecting Claude to TradingView via MCP for real-time trading data access
 
 ## Related
-- [[Andrej Karpathy]], [[LLM Wiki]], [[Context Window Management]]
+- [[Andrej Karpathy]], [[LLM Wiki]], [[Context Window Management]], [[MCP]]

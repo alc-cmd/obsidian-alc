@@ -1,7 +1,7 @@
 ---
 aliases: [Model Context Protocol, MCP server, MCP servers]
 first_mentioned: 2026-04-10
-source_count: 3
+source_count: 4
 tags: [AI, tools, Claude, protocol, integrations]
 ---
 
@@ -21,6 +21,8 @@ Model Context Protocol — the standard for connecting Claude (and other LLMs) t
 - [[Top MCP Servers]] — Curated list of 35 production-quality MCP servers across 9 categories
 - [[Greg Isenberg Agent Skills]] — Notes that MCP servers consume context tokens, reinforcing the 3-5 server recommendation
 - [[Hermes Agent Intermediate to Advanced]] — Hermes 的 MCP 深度集成：Stdio/HTTP 双模式、OAuth 2.1 安全、权限白名单过滤、MCP Sampling 反向调用、动态工具发现
+
+- [[Miles Deutscher TradingView MCP]] — TradingView MCP connecting Claude Code to live chart data for real-time trading analysis, indicator management, and TA automation
 
 ## Open Questions
 - How does MCP server quality scale as the ecosystem matures? Will curation become a bottleneck?
