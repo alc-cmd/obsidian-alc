@@ -9,6 +9,7 @@ Master catalog of all wiki pages. Updated on every ingest.
 ## Sources
 - [[AI 2027]] — Research-backed scenario forecast of AI development through 2027, predicting AGI and superintelligence timeline with two endings. By Daniel Kokotajlo, Eli Lifland, et al. (2025-04-03)
 - [[Barry AI Trading System]] — Crypto trader's journey from $3K→$40K→zero, rebuilding with 30+ AI tools to 80% win rate on perps; emotional discipline as data (2026-04-14)
+- [[Claude Design System Prompt]] — Full system prompt of Anthropic's Claude Design tool: workflow, HTML output patterns, React+Babel setup, tweaks system, verification pipeline (2026-04-18)
 - [[Claude Schedules vs Routines]] — Three ways to run Claude Code automatically: Routines (cloud), Desktop Schedules (local), /loop (session); decision matrix (2026-04-15)
 - [[Dan Koe Write More Essays]] — Why essays are the last bastion of real thinking; the meaning economy and epistemic commons (2026-04-02)
 - [[Greg Isenberg Agent Skills]] — Why context window management matters for AI agents; skills vs agent.md, iterative skill-building (2026-04-08)
@@ -18,6 +19,7 @@ Master catalog of all wiki pages. Updated on every ingest.
 - [[Karpathy LLM Knowledge Bases]] — Andrej Karpathy's Twitter thread on using LLMs to build personal knowledge bases with Obsidian (2026-04-02)
 - [[Miles Deutscher AI Second Brain]] — Video tutorial implementing LLM Wiki with Obsidian + Claude Code; practical upgrades and real-world demo (2026-04-09)
 - [[Miles Deutscher TradingView MCP]] — Full guide connecting Claude Code to TradingView via MCP for real-time chart data, indicators, TA automation (2026-04-01)
+- [[StarPlatinum Productivity Principles]] — 5 practices for overcoming analysis paralysis: morning wins, uncomfortable first, focused time blocks, diet, social media filtering (2026-04-16)
 - [[Top MCP Servers]] — Curated list of 35 production-quality MCP servers for Claude, sorted by category (2026-04-08)
 
 ## Entities
@@ -34,6 +36,7 @@ Master catalog of all wiki pages. Updated on every ingest.
 
 ## Concepts
 - [[AI Agent Workflows]] — Patterns for building reliable AI agent systems through incremental skill development
+- [[Claude Design]] — Anthropic's AI design tool producing HTML prototypes, slides, and animations with automated verification pipeline
 - [[AI Alignment]] — The unsolved problem of ensuring AI systems pursue human-compatible goals
 - [[AI Arms Race]] — US-China geopolitical competition for AI supremacy
 - [[AI Capability Distribution]] — Why AI progress is uneven across domains; verifiable rewards drive coding gains faster than writing/reasoning

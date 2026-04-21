@@ -172,3 +172,24 @@ Pages updated (3):
 - `wiki/entities/Miles Deutscher.md` — added second source, updated source count
 - `wiki/concepts/MCP.md` — added TradingView MCP reference, updated source count
 - `wiki/index.md` — added new pages, alphabetized all sections
+
+## [2026-04-21] ingest | StarPlatinum Productivity Principles
+
+Source: Twitter thread by @StarPlatinum_ (2026-04-16, clipped 2026-04-17). Five practices for overcoming analysis paralysis and chronic unproductivity: morning wins, uncomfortable tasks first, focused time blocks, diet optimization, social media filtering. Cites Atomic Habits.
+
+Pages created (1):
+- `wiki/sources/StarPlatinum Productivity Principles.md` — source summary
+
+Pages updated (1):
+- `wiki/index.md` — added new source
+
+## [2026-04-21] ingest | Claude Design System Prompt
+
+Source: Twitter thread by @ZaynHao (2026-04-18, clipped 2026-04-20). Full Chinese translation of the system prompt powering Claude Design — Anthropic's AI design tool. Reveals complete architecture: 6-step workflow, HTML output with React+Babel, starter components, Tweaks system, fork_verifier_agent QA pipeline, anti-slop design philosophy.
+
+Pages created (2):
+- `wiki/sources/Claude Design System Prompt.md` — source summary
+- `wiki/concepts/Claude Design.md` — concept page for Anthropic's design tool
+
+Pages updated (1):
+- `wiki/index.md` — added new source, concept
