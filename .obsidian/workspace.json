@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "raw/Clippings/Claude Design 系统提示词（中文版）.md",
+                "file": "raw/Clippings/How to really stop your agents from making the same mistakes.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Claude Design 系统提示词（中文版）"
+              "title": "How to really stop your agents from making the same mistakes"
             }
           }
         ]
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "raw/Clippings/Claude Design 系统提示词（中文版）.md",
+                "file": "raw/Clippings/How to really stop your agents from making the same mistakes.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +104,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for Claude Design 系统提示词（中文版）"
+              "title": "Backlinks for How to really stop your agents from making the same mistakes"
             }
           },
           {
@@ -185,11 +185,12 @@
   },
   "active": "a3c949e93d1bc238",
   "lastOpenFiles": [
+    "raw/Clippings/Claude Design 系统提示词（中文版）.md",
+    "raw/Clippings/How to really stop your agents from making the same mistakes.md",
     "wiki/concepts/Claude Design.md",
     "wiki/sources/StarPlatinum Productivity Principles.md",
     "wiki/sources/Claude Design System Prompt.md",
     "raw/Clippings/Your Head Is Full of Shit. Fix it NOW.md",
-    "raw/Clippings/Claude Design 系统提示词（中文版）.md",
     "raw/Clippings/How to Connect Claude to TradingView (FULL GUIDE).md",
     "wiki/sources/Miles Deutscher TradingView MCP.md",
     "wiki/concepts/Meaning Economy.md",
@@ -214,7 +215,6 @@
     "wiki/entities/Andrej Karpathy.md",
     "wiki/analyses/From Prompt Engineering to Memory Engineering.md",
     "wiki/concepts/AI Agent Workflows.md",
-    "Untitled.md",
     "raw/assets/prompt-to-memory-engineering.png",
     "Clippings",
     "raw/Clippings/Clippings",
