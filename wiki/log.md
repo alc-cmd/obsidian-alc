@@ -194,6 +194,17 @@ Pages created (2):
 Pages updated (1):
 - `wiki/index.md` — added new source, concept
 
+## [2026-04-22] ingest | Minara Strategy Studio
+
+Source: Minara's official product documentation for Strategy Studio (2026-04-21, clipped 2026-04-22). AI-powered quantitative strategy platform with three entry paths (chat, form builder, code import), automatic backtesting with MAE/MFE per-trade metrics, bounded AI auto-optimization (up to 5 rounds + transparent failure report), version-safe deployment, and an upcoming share-card growth loop. First-party content — establishes [[Minara]] as an entity in the wiki.
+
+Pages created (2):
+- `wiki/sources/Minara Strategy Studio.md` — source summary emphasizing product positioning and marketing-relevant differentiators
+- `wiki/entities/Minara.md` — company/product entity page
+
+Pages updated (1):
+- `wiki/index.md` — added new source and entity
+
 ## [2026-04-22] ingest | Garry Tan Skillify
 
 Source: Essay by @garrytan (2026-04-22, clipped 2026-04-22). Argues agent reliability is a testing problem, not a prompting problem. Introduces "skillify": a 10-step checklist that turns every agent failure into a tested, durable skill, making the bug structurally impossible to repeat. Core distinction: latent (judgment) vs deterministic (precision) work; most bugs are deterministic work done in latent space. Direct critique of LangChain ("pieces aren't a practice") and Hermes Agent ("great creation, missing verification").
