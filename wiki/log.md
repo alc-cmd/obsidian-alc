@@ -193,3 +193,17 @@ Pages created (2):
 
 Pages updated (1):
 - `wiki/index.md` — added new source, concept
+
+## [2026-04-22] ingest | Garry Tan Skillify
+
+Source: Essay by @garrytan (2026-04-22, clipped 2026-04-22). Argues agent reliability is a testing problem, not a prompting problem. Introduces "skillify": a 10-step checklist that turns every agent failure into a tested, durable skill, making the bug structurally impossible to repeat. Core distinction: latent (judgment) vs deterministic (precision) work; most bugs are deterministic work done in latent space. Direct critique of LangChain ("pieces aren't a practice") and Hermes Agent ("great creation, missing verification").
+
+Pages created (3):
+- `wiki/sources/Garry Tan Skillify.md` — source summary with full 10-step checklist and notable heuristics
+- `wiki/entities/Garry Tan.md` — founder of GBrain, OpenClaw, GStack
+- `wiki/concepts/Skillify.md` — concept page for the pattern
+
+Pages updated (3):
+- `wiki/concepts/Hermes Agent.md` — added "External critique" section addressing the missing verification layer; bumped source_count to 3; added Skillify to Related
+- `wiki/concepts/AI Agent Workflows.md` — added Garry Tan Skillify as 5th source; added Skillify to Related
+- `wiki/index.md` — added new source, entity, concept

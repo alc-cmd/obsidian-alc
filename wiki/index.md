@@ -12,6 +12,7 @@ Master catalog of all wiki pages. Updated on every ingest.
 - [[Claude Design System Prompt]] — Full system prompt of Anthropic's Claude Design tool: workflow, HTML output patterns, React+Babel setup, tweaks system, verification pipeline (2026-04-18)
 - [[Claude Schedules vs Routines]] — Three ways to run Claude Code automatically: Routines (cloud), Desktop Schedules (local), /loop (session); decision matrix (2026-04-15)
 - [[Dan Koe Write More Essays]] — Why essays are the last bastion of real thinking; the meaning economy and epistemic commons (2026-04-02)
+- [[Garry Tan Skillify]] — 10-step checklist turning every agent failure into a tested, structural skill; latent vs deterministic; critique of LangChain and Hermes (2026-04-22)
 - [[Greg Isenberg Agent Skills]] — Why context window management matters for AI agents; skills vs agent.md, iterative skill-building (2026-04-08)
 - [[Hermes Agent Beginner to Master]] — Nous Research开源AI Agent框架实战指南：自改进学习循环、三层记忆、Skill系统、多平台接入 (2026-04-07)
 - [[Hermes Agent Intermediate to Advanced]] — Hermes进阶：四层记忆架构、Skill自进化、MCP深度集成、多Agent编排、生产化部署 (2026-04-15)
@@ -30,6 +31,7 @@ Master catalog of all wiki pages. Updated on every ingest.
 - [[Daniel Schmachtenberger]] — Systems thinker focused on the metacrisis and civilizational risk
 - [[DeepCent]] — Fictional Chinese AI company in AI 2027 scenario (CCP-backed competitor)
 - [[Eli Lifland]] — AI Digest co-founder, #1 RAND forecaster, co-author of AI 2027
+- [[Garry Tan]] — Builder of GBrain + OpenClaw; coined the skillify pattern for agent reliability via tested skills
 - [[Miles Deutscher]] — Content creator, early adopter and popularizer of LLM Wiki pattern and TradingView MCP guide
 - [[Nous Research]] — Open-source AI lab behind Hermes Agent; crypto-funded, ~$70M raised
 - [[OpenBrain]] — Fictional frontier AGI lab in AI 2027 scenario (composite of leading US labs)
@@ -49,6 +51,7 @@ Master catalog of all wiki pages. Updated on every ingest.
 - [[MCP]] — Model Context Protocol — standard for connecting Claude to external tools and services
 - [[Meaning Economy]] — Emerging economy where meaning (ordered consciousness) is the scarcest commodity
 - [[Neuralese Recurrence]] — High-bandwidth internal reasoning using vector representations instead of text tokens
+- [[Skillify]] — 10-step pipeline turning agent failures into tested, durable skills; latent/deterministic discipline
 - [[Trading Psychology]] — Emotional state management as data signal; systematic discipline over intuition in trading
 
 ## Analyses

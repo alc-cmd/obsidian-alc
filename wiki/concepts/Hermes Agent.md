@@ -1,7 +1,7 @@
 ---
 aliases: [Hermes, hermes-agent, Hermes AI Agent]
 first_mentioned: 2026-04-15
-source_count: 2
+source_count: 3
 tags: [AI-Agent, open-source, self-improving, Skill, MCP, memory]
 ---
 
@@ -47,15 +47,28 @@ tags: [AI-Agent, open-source, self-improving, Skill, MCP, memory]
 | 记忆 | 四层 + FTS5 | CLAUDE.md + 手动 |
 | 成本 | ~$10-15/月（VPS + API） | 订阅制 |
 
+## 外部批评：Hermes 缺少验证层
+
+[[Garry Tan]] 在 [[Garry Tan Skillify]] 中直接点名 Hermes：`skill_manage` 自动创建/修补 Skill 的能力是"真正出色的程序性记忆"，但缺少软件工程 2005 年就解决的测试习惯：
+- 无确定性代码的单元测试
+- 无 resolver eval 验证 Skill 路由是否真的命中
+- 无 `check-resolvable` 找出"暗 Skill"（无法被触发的孤儿）
+- 无 DRY 审计——周一生成 `deploy-k8s`、周四生成 `kubernetes-deploy` 的冲突无人察觉
+- 无日常健康检查——上游 API 变形六周后，Skill 静默返回垃圾数据
+
+Garry 的结论："Hermes 负责创建，GBrain 负责验证，你需要两者。" 这直接回应了本页原有的 *"Skill 冲突解决机制是否成熟？"* 问题——现阶段答案是否定的。
+
 ## Sources
 - [[Hermes Agent Beginner to Master]] — 从安装到实战的完整新手指南，变现路径分析
 - [[Hermes Agent Intermediate to Advanced]] — 架构内部机制、Skill 编写、MCP 深度集成、多 Agent 编排
+- [[Garry Tan Skillify]] — 外部批评：Hermes 创建能力强，但缺少测试/路由验证/DRY 审计层
 
 ## Open Questions
 - 自改进天花板在哪？Agent 无法识别超出自身知识范围的错误
 - 记忆污染如何管理？早期误记会持续影响后续行为
-- Skill 冲突解决机制是否成熟？触发条件重叠时产生意外行为
+- Skill 冲突解决机制是否成熟？触发条件重叠时产生意外行为（Garry 的答案：现阶段不成熟，需要外挂 GBrain 级别的审计）
 - 647 Skill 的质量分布如何？社区贡献是否经过审核？
+- Hermes 能否把 [[Skillify]] 的 10 步检查内建为 `skill_manage` 的验证钩子？
 
 ## Related
-- [[AI Agent Workflows]], [[MCP]], [[Context Window Management]], [[LLM Wiki]]
+- [[Skillify]], [[AI Agent Workflows]], [[MCP]], [[Context Window Management]], [[LLM Wiki]]
