@@ -1,0 +1,791 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>The Loop Breaks · AI Talks, You Trade</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=JetBrains+Mono:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink:        #0A0A0C;
+    --ink-2:      #141317;
+    --ember:      #E8553C;
+    --ember-deep: #8E2F17;
+    --ember-glow: rgba(232, 85, 60, 0.24);
+    --paper:      #F2EADE;
+    --paper-dim:  #B8AE9D;
+    --paper-fade: #6C6358;
+    --hairline:   rgba(242, 234, 222, 0.09);
+    --bracket:    rgba(242, 234, 222, 0.32);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html, body {
+    background: var(--ink);
+    color: var(--paper);
+    font-family: "Fraunces", "Iowan Old Style", Georgia, serif;
+    font-feature-settings: "ss01", "ss02", "ss03";
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 40px 20px 80px;
+  }
+
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 1000;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 220 220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.95' numOctaves='2' seed='11'/><feColorMatrix values='0 0 0 0 0.95  0 0 0 0 0.92  0 0 0 0 0.86  0 0 0 0.16 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+    background-size: 220px 220px;
+    mix-blend-mode: soft-light;
+    opacity: 0.9;
+  }
+
+  .canvas {
+    width: 1500px;
+    min-height: 960px;
+    background: var(--ink);
+    position: relative;
+    padding: 64px 80px 56px;
+    border: 1px solid var(--hairline);
+    overflow: hidden;
+    isolation: isolate;
+  }
+
+  .canvas::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(to right, rgba(242,234,222,0.022) 1px, transparent 1px);
+    background-size: 80px 100%;
+    mask-image: linear-gradient(to bottom, transparent 0%, #000 10%, #000 90%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to bottom, transparent 0%, #000 10%, #000 90%, transparent 100%);
+    pointer-events: none;
+  }
+
+  .canvas::after {
+    content: "";
+    position: absolute;
+    inset: 18px;
+    border: 1px solid var(--bracket);
+    clip-path: polygon(
+      0 0, 18px 0, 18px 1px, 1px 1px, 1px 18px, 0 18px,
+      0 100%, 18px 100%, 18px calc(100% - 1px), 1px calc(100% - 1px), 1px calc(100% - 18px), 0 calc(100% - 18px),
+      100% 100%, calc(100% - 18px) 100%, calc(100% - 18px) calc(100% - 1px), calc(100% - 1px) calc(100% - 1px), calc(100% - 1px) calc(100% - 18px), 100% calc(100% - 18px),
+      100% 0, calc(100% - 18px) 0, calc(100% - 18px) 1px, calc(100% - 1px) 1px, calc(100% - 1px) 18px, 100% 18px
+    );
+    opacity: 0.45;
+    pointer-events: none;
+  }
+
+  /* ========== masthead ========== */
+  .mast {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: 10.5px;
+    font-weight: 500;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--paper-dim);
+    padding-bottom: 18px;
+    border-bottom: 1px solid var(--hairline);
+  }
+  .mast .l { justify-self: start; }
+  .mast .c { justify-self: center; color: var(--paper); letter-spacing: 0.32em; }
+  .mast .c .dot { color: var(--ember); margin: 0 8px; }
+  .mast .r { justify-self: end; color: var(--ember); }
+
+  /* ========== eyebrow + title ========== */
+  .head-grid {
+    display: grid;
+    grid-template-columns: 1fr 420px;
+    gap: 64px;
+    align-items: flex-end;
+    margin-top: 44px;
+  }
+
+  .eye {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    font-family: "JetBrains Mono", monospace;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--ember);
+    margin-bottom: 12px;
+  }
+  .eye::before {
+    content: "";
+    width: 36px;
+    height: 1px;
+    background: var(--ember);
+  }
+
+  h1.title {
+    font-size: 104px;
+    line-height: 0.92;
+    font-weight: 800;
+    letter-spacing: -0.04em;
+    font-variation-settings: "opsz" 144;
+    color: var(--paper);
+  }
+  h1.title em {
+    font-style: italic;
+    font-weight: 400;
+    color: var(--ember);
+    font-variation-settings: "opsz" 144;
+    letter-spacing: -0.03em;
+  }
+  .title-divider {
+    display: inline-block;
+    width: 56px;
+    height: 2px;
+    background: var(--ember);
+    vertical-align: 20px;
+    margin: 0 14px 0 0;
+  }
+
+  .lede {
+    font-size: 19px;
+    line-height: 1.48;
+    font-weight: 300;
+    font-variation-settings: "opsz" 48;
+    color: var(--paper);
+    opacity: 0.86;
+    border-left: 1px solid var(--ember);
+    padding: 4px 0 4px 24px;
+  }
+  .lede b {
+    font-weight: 500;
+    font-style: italic;
+    color: var(--ember);
+    opacity: 1;
+  }
+
+  /* ========== zone band ========== */
+  .zone-band {
+    margin-top: 44px;
+    display: grid;
+    grid-template-columns: 2fr 170px 3fr;
+    align-items: center;
+    gap: 0;
+    font-family: "JetBrains Mono", monospace;
+    font-size: 10.5px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    padding-bottom: 4px;
+  }
+  .zone-band .machine-tag { color: var(--ember); display: flex; align-items: center; gap: 12px; }
+  .zone-band .manual-tag  { color: var(--paper-dim); display: flex; align-items: center; gap: 12px; }
+  .zone-band .machine-tag::before,
+  .zone-band .manual-tag::before {
+    content: "";
+    display: inline-block;
+    width: 20px;
+    height: 1px;
+  }
+  .zone-band .machine-tag::before { background: var(--ember); }
+  .zone-band .manual-tag::before  { background: var(--paper-dim); }
+  .zone-band .sep {
+    text-align: center;
+    color: var(--paper-fade);
+    letter-spacing: 0.3em;
+    font-size: 9px;
+    opacity: 0.6;
+  }
+
+  /* ========== flow ========== */
+  .flow {
+    margin-top: 18px;
+    display: grid;
+    grid-template-columns: 1fr 52px 1fr 170px 1fr 52px 1fr 52px 1fr;
+    gap: 0;
+    align-items: stretch;
+  }
+
+  .node {
+    position: relative;
+    min-height: 260px;
+    padding: 22px 22px 22px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .node .nhdr {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    font-family: "JetBrains Mono", monospace;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+  }
+  .node .idx {
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+  }
+  .node .tag {
+    font-size: 9.5px;
+    font-weight: 500;
+    padding: 4px 7px;
+    border-radius: 1px;
+  }
+
+  .node .nname {
+    margin-top: 24px;
+    font-family: "Fraunces", serif;
+    font-size: 30px;
+    line-height: 1.02;
+    font-weight: 500;
+    letter-spacing: -0.025em;
+    font-variation-settings: "opsz" 144;
+  }
+
+  .node .nglos {
+    margin-top: 14px;
+    font-family: "Fraunces", serif;
+    font-style: italic;
+    font-size: 14px;
+    line-height: 1.42;
+    font-weight: 300;
+    font-variation-settings: "opsz" 48;
+    opacity: 0.82;
+  }
+
+  .node .nmeta {
+    margin-top: auto;
+    padding-top: 18px;
+    border-top: 1px dashed currentColor;
+    font-family: "JetBrains Mono", monospace;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    opacity: 0.8;
+  }
+
+  /* MACHINE nodes (01, 02) — solid ember */
+  .node.machine {
+    background: var(--ember);
+    color: var(--ink);
+    border: 1px solid var(--ember);
+    box-shadow:
+      0 22px 40px -22px rgba(232, 85, 60, 0.48),
+      inset 0 1px 0 rgba(255, 255, 255, 0.22),
+      inset 0 -1px 0 rgba(0, 0, 0, 0.18);
+  }
+  .node.machine::before {
+    /* weave */
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: repeating-linear-gradient(
+      90deg,
+      rgba(0,0,0,0.06) 0 1px,
+      transparent 1px 9px
+    );
+    pointer-events: none;
+  }
+  .node.machine .idx,
+  .node.machine .tag,
+  .node.machine .nmeta { color: var(--ember-deep); }
+  .node.machine .tag {
+    background: var(--ink);
+    color: var(--ember);
+  }
+  .node.machine .nname { color: var(--ink); }
+  .node.machine .nglos { color: rgba(10, 10, 12, 0.74); }
+
+  /* MANUAL nodes (03, 04, 05) — dashed ghost */
+  .node.manual {
+    border: 1px dashed rgba(242, 234, 222, 0.24);
+    background: repeating-linear-gradient(
+      -45deg,
+      transparent 0 14px,
+      rgba(242, 234, 222, 0.018) 14px 15px
+    );
+    color: var(--paper-dim);
+  }
+  .node.manual .idx { color: var(--paper-dim); }
+  .node.manual .tag {
+    color: var(--ember);
+    border: 1px solid var(--ember);
+    background: rgba(232, 85, 60, 0.06);
+  }
+  .node.manual .nname {
+    color: rgba(242, 234, 222, 0.42);
+    font-style: italic;
+    font-weight: 300;
+  }
+  .node.manual .nglos { color: var(--paper-fade); }
+  .node.manual .nmeta { color: var(--paper-fade); }
+
+  .node.manual::before {
+    /* subtle warning corners */
+    content: "";
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 10px;
+    height: 10px;
+    border-top: 1px solid var(--ember);
+    border-right: 1px solid var(--ember);
+    opacity: 0.55;
+  }
+
+  /* ========== connectors ========== */
+  .conn {
+    position: relative;
+    align-self: stretch;
+  }
+
+  /* generic arrow line vertically centered */
+  .conn .line {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 2px;
+    transform: translateY(-1px);
+  }
+  .conn .head {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    width: 0;
+    height: 0;
+    border-left: 9px solid;
+    border-top: 6px solid transparent;
+    border-bottom: 6px solid transparent;
+    transform: translateY(-50%);
+  }
+
+  .conn.solid .line { background: var(--ember); }
+  .conn.solid .head { border-left-color: var(--ember); }
+
+  .conn.dashed .line {
+    background: repeating-linear-gradient(
+      to right,
+      var(--paper-dim) 0 6px,
+      transparent 6px 11px
+    );
+  }
+  .conn.dashed .head { border-left-color: var(--paper-dim); opacity: 0.85; }
+
+  /* ---- BREAK connector (big gap) ---- */
+  .conn.break {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+
+  /* solid line entering from left, fading to nothing at center-left of break */
+  .conn.break .in-line {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 40%;
+    height: 2px;
+    transform: translateY(-1px);
+    background: linear-gradient(to right, var(--ember) 0%, var(--ember) 68%, transparent 100%);
+  }
+  /* dashed line starting from right-of-center, exiting right with head */
+  .conn.break .out-line {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    width: 40%;
+    height: 2px;
+    transform: translateY(-1px);
+    background: repeating-linear-gradient(
+      to right,
+      var(--paper-dim) 0 6px,
+      transparent 6px 11px
+    );
+    mask-image: linear-gradient(to right, transparent 0%, #000 28%, #000 100%);
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, #000 28%, #000 100%);
+  }
+  .conn.break .out-head {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    border-left: 9px solid var(--paper-dim);
+    border-top: 6px solid transparent;
+    border-bottom: 6px solid transparent;
+  }
+
+  /* fracture band */
+  .fracture {
+    position: relative;
+    z-index: 2;
+    width: 76px;
+    align-self: stretch;
+    margin: 8px 0;
+    border-left: 1px dashed var(--ember);
+    border-right: 1px dashed var(--ember);
+    background:
+      repeating-linear-gradient(
+        -45deg,
+        rgba(232, 85, 60, 0.0) 0 6px,
+        rgba(232, 85, 60, 0.09) 6px 7px
+      );
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .fracture .frac-label {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 10.5px;
+    letter-spacing: 0.34em;
+    text-transform: uppercase;
+    color: var(--ember);
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    font-weight: 600;
+    padding: 10px 0;
+    background: var(--ink);
+  }
+  .fracture::before, .fracture::after {
+    /* little notch ticks */
+    content: "";
+    position: absolute;
+    left: 50%;
+    width: 14px;
+    height: 1px;
+    background: var(--ember);
+    transform: translateX(-50%);
+  }
+  .fracture::before { top: -1px; }
+  .fracture::after  { bottom: -1px; }
+
+  .break-caption {
+    position: absolute;
+    left: 50%;
+    top: -30px;
+    transform: translateX(-50%);
+    font-family: "JetBrains Mono", monospace;
+    font-size: 10px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--ember);
+    white-space: nowrap;
+  }
+  .break-caption-bottom {
+    position: absolute;
+    left: 50%;
+    bottom: -30px;
+    transform: translateX(-50%);
+    font-family: "Fraunces", serif;
+    font-style: italic;
+    font-size: 14px;
+    color: var(--paper-dim);
+    white-space: nowrap;
+    font-variation-settings: "opsz" 48;
+  }
+
+  /* ========== footer ========== */
+  .foot {
+    margin-top: 56px;
+    padding-top: 26px;
+    border-top: 1px solid var(--hairline);
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1.1fr;
+    gap: 52px;
+  }
+  .foot .cell h4 {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 10.5px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    font-weight: 500;
+    color: var(--ember);
+    margin-bottom: 12px;
+  }
+  .foot .cell p {
+    font-family: "Fraunces", serif;
+    font-size: 15.5px;
+    line-height: 1.52;
+    font-weight: 300;
+    color: var(--paper);
+    font-variation-settings: "opsz" 48;
+    opacity: 0.84;
+  }
+  .foot .cell p b {
+    font-weight: 500;
+    font-style: italic;
+    color: var(--ember);
+    opacity: 1;
+  }
+  .legend-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-family: "JetBrains Mono", monospace;
+    font-size: 12px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--paper);
+    margin-bottom: 10px;
+  }
+  .legend-row .sw {
+    width: 34px;
+    height: 14px;
+    flex: 0 0 34px;
+    border: 1px solid var(--ember);
+  }
+  .legend-row.machine .sw { background: var(--ember); }
+  .legend-row.manual .sw {
+    border-style: dashed;
+    background: transparent;
+  }
+  .legend-row em {
+    font-family: "Fraunces", serif;
+    font-style: italic;
+    font-size: 14px;
+    letter-spacing: 0;
+    text-transform: none;
+    color: var(--paper-dim);
+    font-weight: 300;
+  }
+
+  .metric-row {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 14px 18px;
+    align-items: baseline;
+  }
+  .metric-row .big {
+    font-family: "Fraunces", serif;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 1;
+    color: var(--ember);
+    letter-spacing: -0.04em;
+    font-variation-settings: "opsz" 144;
+  }
+  .metric-row .cap {
+    font-family: "Fraunces", serif;
+    font-size: 14px;
+    line-height: 1.3;
+    font-weight: 300;
+    color: var(--paper);
+    font-variation-settings: "opsz" 48;
+    opacity: 0.85;
+  }
+  .metric-row .cap em {
+    font-style: italic;
+    color: var(--ember);
+  }
+
+  /* ========== colophon ========== */
+  .colophon {
+    margin-top: 32px;
+    padding-top: 16px;
+    border-top: 1px solid var(--hairline);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: "JetBrains Mono", monospace;
+    font-size: 10px;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--paper-fade);
+  }
+  .colophon .bar {
+    display: inline-block;
+    width: 22px;
+    height: 1px;
+    background: var(--paper-fade);
+    margin: 0 10px;
+    vertical-align: middle;
+  }
+  .colophon .ember { color: var(--ember); }
+</style>
+</head>
+<body>
+
+<div class="canvas">
+
+  <!-- MASTHEAD -->
+  <div class="mast">
+    <div class="l">FIG. 02 · AGENT WORKFLOW</div>
+    <div class="c">Where <span class="dot">·</span> The <span class="dot">·</span> Loop <span class="dot">·</span> Breaks</div>
+    <div class="r">№ 04·22·26</div>
+  </div>
+
+  <!-- HEAD: title + lede -->
+  <div class="head-grid">
+    <div>
+      <div class="eye">Today's trading agent, in five steps</div>
+      <h1 class="title">
+        AI&nbsp;talks.<br>
+        <em><span class="title-divider"></span>You&nbsp;trade.</em>
+      </h1>
+    </div>
+    <div class="lede">
+      Today's agents ship the first two steps — reading the chart, writing a paragraph.
+      The rest lands on <b>you</b>: open the exchange, size the position, send the order.
+      Three manual steps per signal. That is not agency.
+    </div>
+  </div>
+
+  <!-- ZONE BAND -->
+  <div class="zone-band">
+    <div class="machine-tag">Machine · steps 01 → 02</div>
+    <div class="sep">&nbsp;</div>
+    <div class="manual-tag">Manual · steps 03 → 05</div>
+  </div>
+
+  <!-- FLOW -->
+  <div class="flow">
+
+    <!-- 01 -->
+    <div class="node machine">
+      <div class="nhdr">
+        <span class="idx">01</span>
+        <span class="tag">Machine</span>
+      </div>
+      <div class="nname">AI reads the chart</div>
+      <div class="nglos">pattern, indicators, volume, sentiment</div>
+      <div class="nmeta"><span>done</span><span>~seconds</span></div>
+    </div>
+
+    <!-- arrow -->
+    <div class="conn solid">
+      <div class="line"></div>
+      <div class="head"></div>
+    </div>
+
+    <!-- 02 -->
+    <div class="node machine">
+      <div class="nhdr">
+        <span class="idx">02</span>
+        <span class="tag">Machine</span>
+      </div>
+      <div class="nname">Text output</div>
+      <div class="nglos">“Looks bullish. Consider a long near support.”</div>
+      <div class="nmeta"><span>done</span><span>~seconds</span></div>
+    </div>
+
+    <!-- BREAK -->
+    <div class="conn break">
+      <div class="in-line"></div>
+      <div class="fracture">
+        <div class="frac-label">handoff</div>
+      </div>
+      <div class="out-line"></div>
+      <div class="out-head"></div>
+      <div class="break-caption-bottom">the arrow does not cross</div>
+    </div>
+
+    <!-- 03 -->
+    <div class="node manual">
+      <div class="nhdr">
+        <span class="idx">03</span>
+        <span class="tag">Manual</span>
+      </div>
+      <div class="nname">Open exchange</div>
+      <div class="nglos">leave app, log in, navigate to pair</div>
+      <div class="nmeta"><span>on you</span><span>~45s</span></div>
+    </div>
+
+    <!-- arrow -->
+    <div class="conn dashed">
+      <div class="line"></div>
+      <div class="head"></div>
+    </div>
+
+    <!-- 04 -->
+    <div class="node manual">
+      <div class="nhdr">
+        <span class="idx">04</span>
+        <span class="tag">Manual</span>
+      </div>
+      <div class="nname">Size position</div>
+      <div class="nglos">convert, risk-check, type the amount</div>
+      <div class="nmeta"><span>on you</span><span>~60s</span></div>
+    </div>
+
+    <!-- arrow -->
+    <div class="conn dashed">
+      <div class="line"></div>
+      <div class="head"></div>
+    </div>
+
+    <!-- 05 -->
+    <div class="node manual">
+      <div class="nhdr">
+        <span class="idx">05</span>
+        <span class="tag">Manual</span>
+      </div>
+      <div class="nname">Execute trade</div>
+      <div class="nglos">confirm, sign, wait, hope</div>
+      <div class="nmeta"><span>on you</span><span>~30s</span></div>
+    </div>
+
+  </div>
+
+  <!-- FOOTER -->
+  <div class="foot">
+    <div class="cell">
+      <h4>Thesis</h4>
+      <p><b>The agent that ships closes the loop.</b> Not better prose — routed orders, signed transactions, confirmed fills. Everything after “text output” is product work most teams have not done.</p>
+    </div>
+
+    <div class="cell">
+      <h4>Legend</h4>
+      <div class="legend-row machine">
+        <span class="sw"></span>
+        <span>Machine <em>done by the model</em></span>
+      </div>
+      <div class="legend-row manual">
+        <span class="sw"></span>
+        <span>Manual <em>pushed back to the user</em></span>
+      </div>
+    </div>
+
+    <div class="cell">
+      <h4>Per signal</h4>
+      <div class="metric-row">
+        <div class="big">3 / 5</div>
+        <div class="cap">steps left to the <em>user</em></div>
+        <div class="big">~2&nbsp;min</div>
+        <div class="cap">of added <em>friction</em>, per trade</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- COLOPHON -->
+  <div class="colophon">
+    <div>Agent Workflow <span class="bar"></span> <span class="ember">draft 01</span></div>
+    <div>Set in Fraunces &amp; JetBrains Mono</div>
+    <div>Minara Research <span class="bar"></span> 04·22·26</div>
+  </div>
+
+</div>
+
+</body>
+</html>
