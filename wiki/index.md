@@ -23,9 +23,11 @@ Master catalog of all wiki pages. Updated on every ingest.
 - [[Minara Strategy Studio]] — Official docs: Minara's AI-powered quant strategy builder; NL/form/code entry, auto-optimization (5 rounds), version-safe live deploy (2026-04-21)
 - [[StarPlatinum Productivity Principles]] — 5 practices for overcoming analysis paralysis: morning wins, uncomfortable first, focused time blocks, diet, social media filtering (2026-04-16)
 - [[Top MCP Servers]] — Curated list of 35 production-quality MCP servers for Claude, sorted by category (2026-04-08)
+- [[X Analytics Q1-Q2 2026]] — Official X Analytics CSV export for @AlexAiSurfer, 90-day window (2026-01-24 → 2026-04-23); 52 posts, 5,910 impressions, 9 new follows (2026-04-23)
 
 ## Entities
 - [[0xBarrry]] — Crypto trader, product designer turned AI systems builder; 80% perps win rate with 30+ custom AI tools
+- [[AlexAiSurfer]] — Alex, marketing at Minara; X content creator on AI workflows, Web3 trading, AI-native productivity
 - [[Andrej Karpathy]] — AI researcher, educator, proponent of LLM-maintained knowledge bases
 - [[Dan Koe]] — Writer and advocate for essay writing as a tool for thinking and meaning-making
 - [[Daniel Kokotajlo]] — Former OpenAI researcher, lead author of AI 2027, TIME100 honoree
@@ -53,8 +55,12 @@ Master catalog of all wiki pages. Updated on every ingest.
 - [[MCP]] — Model Context Protocol — standard for connecting Claude to external tools and services
 - [[Meaning Economy]] — Emerging economy where meaning (ordered consciousness) is the scarcest commodity
 - [[Neuralese Recurrence]] — High-bandwidth internal reasoning using vector representations instead of text tokens
+- [[Number-First Hook]] — Content pattern: open with a concrete number; drives 3× engagement vs adjective hooks on X
+- [[Reply Reach Trap]] — Anti-pattern: @reply volume feels productive but consumes attention with minimal reach/follow conversion
 - [[Skillify]] — 10-step pipeline turning agent failures into tested, durable skills; latent/deterministic discipline
+- [[Stack Declaration Post]] — Content pattern: "X is my doctor. Y is my coworker." identity-declaration format for high ER
 - [[Trading Psychology]] — Emotional state management as data signal; systematic discipline over intuition in trading
 
 ## Analyses
+- [[AlexAiSurfer X Engagement]] — Living tracker: 90-day engagement analysis of @AlexAiSurfer with top posts, weekly trend, and content recommendations (updated daily)
 - [[From Prompt Engineering to Memory Engineering]] — Article draft: the shift from crafting prompts to building persistent knowledge architecture. Synthesizes Karpathy, Isenberg, Deutscher, and AI 2027

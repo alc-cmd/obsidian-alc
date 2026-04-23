@@ -6,6 +6,23 @@ title: Wiki Log
 
 Chronological record of wiki operations.
 
+## [2026-04-23] ingest | X Analytics Q1-Q2 2026
+
+Source: Official X Analytics CSV export for [[AlexAiSurfer]], covering 2026-01-24 → 2026-04-23 (90 days, 52 posts).
+
+Pages created (6):
+- `wiki/sources/X Analytics Q1-Q2 2026.md` — dataset source summary
+- `wiki/entities/AlexAiSurfer.md` — Alex's X account (self-entity)
+- `wiki/concepts/Number-First Hook.md` — opening posts with concrete numbers
+- `wiki/concepts/Stack Declaration Post.md` — "X is my doctor. Y is my coworker." format
+- `wiki/concepts/Reply Reach Trap.md` — anti-pattern of reply-heavy posting
+- `wiki/analyses/AlexAiSurfer X Engagement.md` — living tracker with daily-snapshots table
+
+Pages updated (1):
+- `wiki/index.md` — added all new pages
+
+Raw data archived at `raw/x-analytics/account_analytics_content_2026-01-24_2026-04-23.csv`. Tracker is designed for daily updates: drop next CSV into `raw/x-analytics/`, ask Claude to re-ingest.
+
 ## [2026-04-10] init | Wiki initialized
 
 Wiki structure created. Directories: `raw/`, `wiki/sources/`, `wiki/entities/`, `wiki/concepts/`, `wiki/analyses/`. Schema defined in `CLAUDE.md`. Ready for first source.
