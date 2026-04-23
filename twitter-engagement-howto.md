@@ -5,48 +5,58 @@ updated: 2026-04-23
 
 # How to update twitter-engagement.md
 
-## The constraint
+## Workflow (confirmed 2026-04-23)
 
-X blocks unauthenticated scraping. WebFetch returns 402. Logged-out browsers see "hasn't posted" even for active accounts. **Automated daily updates require authentication.**
+**You use Option B — X Analytics CSV export.** Daily drop-in workflow:
 
-## Three options (pick one)
+1. **Morning (2 min manual step):**
+   - Go to https://analytics.x.com → Content → Export data
+   - Pick date range: **"Last 7 days"** for a daily update, or **"Last 28 days"** weekly
+   - Download the CSV
+2. **Drop the file:**
+   - Save into `raw/x-analytics/` — keep the default filename (`account_analytics_content_YYYY-MM-DD_YYYY-MM-DD.csv`) so history is preserved
+3. **Tell Claude:** "update the twitter tracker with the latest CSV"
+   - Claude re-parses, updates 90-day headline, weekly trend, top-10 tables, and appends a new row to Daily snapshots
+   - Flags new top performers and failed experiments
 
-### Option A — Playwright with saved session (recommended)
-- Log into X once in a Playwright browser. Persist the auth cookie to a local profile directory.
-- Daily script opens that profile, scrapes profile + recent post metrics, appends to `twitter-engagement.md`.
-- **Pros:** fully automated after one-time login. Free.
-- **Cons:** re-login needed if X invalidates the session (~weeks). Technically against ToS if ever productized; fine for personal tracking.
+## Daily snapshot row (what Claude computes)
 
-### Option B — X Analytics CSV export
-- Daily, download the CSV from https://analytics.x.com → Account overview → Export data.
-- Drop it in `raw/x-analytics/` — Claude parses and appends.
-- **Pros:** official data source, impression counts included.
-- **Cons:** requires manual download each day.
+For each update, Claude computes deltas since the previous row:
 
-### Option C — X API v2 (paid)
-- Subscribe to Basic tier ($100/mo) or Free (read-only, severely rate-limited).
-- Script hits `/2/users/:id/tweets` with metrics expansion.
-- **Pros:** clean, reliable.
-- **Cons:** cost or rate limits.
+- **Δ posts** = new posts since last check
+- **Δ impressions / engagements** (period totals)
+- **Δ followers** (you paste the current number — analytics.x.com → Overview)
+- **Top post today** = highest-impression post dated in the new window
 
-## Recommended flow for Option A
+## Schedule
 
-1. One-time: `npx playwright codegen x.com` → log in → save storage state to `~/.config/x-tracker/storage.json`.
-2. Daily job (cron or Claude scheduled task at 09:00):
-   - Launch Playwright with that storage state.
-   - Navigate to `x.com/AlexAiSurfer`.
-   - Scrape: profile stats + last 20 posts with their metrics (likes, reposts, replies, views).
-   - Append new row to the Daily snapshots table.
-   - Update the Top posts and Weekly summary sections.
-3. Commit changes to the Obsidian vault.
+Either:
 
-## What the daily update should capture
+- **Self-triggered:** you drop the CSV and ping Claude when you feel like it
+- **Reminder:** use the `schedule` skill to run a daily "remind me to export X analytics CSV" trigger at a fixed time
 
-Minimum viable per post:
-- post URL, post date/time, first 80 chars of text
-- impressions, likes, reposts, replies, bookmarks
-- engagement rate = (likes + reposts + replies + bookmarks) / impressions
+Ask if you want me to set up the reminder.
 
-At the profile level:
-- follower count (delta vs yesterday)
-- total posts (delta vs yesterday → how many posted today)
+## Fallback options (if Option B gets annoying)
+
+### Option A — Playwright with saved session
+- Log into X once in a Playwright browser. Persist auth cookie.
+- Daily script scrapes profile + recent post metrics, appends automatically.
+- Pros: zero manual work. Cons: re-login every few weeks; fragile on X UI changes.
+
+### Option C — X API v2
+- Basic tier $100/mo. Free tier too rate-limited for this use.
+- Clean and reliable, but not worth the cost at current follower scale.
+
+## File layout
+
+```
+obsidian-alex/
+├── twitter-engagement.md            ← the tracker (this is what you read)
+├── twitter-engagement-howto.md      ← this file (procedure)
+└── raw/
+    └── x-analytics/
+        └── account_analytics_content_2026-01-24_2026-04-23.csv
+```
+
+All CSVs stay in `raw/x-analytics/` — never overwrite, always append the new-dated file so you have a forensic trail.
