@@ -169,7 +169,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -185,6 +186,7 @@
   },
   "active": "a3c949e93d1bc238",
   "lastOpenFiles": [
+    "wiki/drafts/2026-04-24-strategy-studio-case-study-plan.md",
     "wiki/analyses/AlexAiSurfer X Engagement.md",
     "wiki/concepts/Reply Reach Trap.md",
     "wiki/concepts/Stack Declaration Post.md",
@@ -216,7 +218,6 @@
     "wiki/concepts/Meaning Economy.md",
     "AI-Industry-April-2026.docx",
     "wiki/concepts/Trading Psychology.md",
-    "wiki/concepts/Hermes Agent.md",
     "Untitled.canvas",
     "raw/minara-chatgpt",
     "raw/assets/before-after-map.html",
